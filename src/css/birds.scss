@@ -569,6 +569,54 @@
         cursor: pointer;
     }
 
+    .nominate_bird_bar {
+        box-sizing: border-box;
+        position: fixed;
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: yellow;
+        z-index: 99;
+    }
+
+.nominate_bird {
+    height: 30px;
+    display: inline-block;
+    float: left;
+    background-color: #4bc6df;
+    margin-right: 10px;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 15px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.nominate_bird span {
+    margin-top: -4px;
+  font-family: 'Guardian Sans Web';
+  font-size: 14px;
+  color: black;
+
+}
+
+
+.plus {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    float: right;
+    cursor: pointer;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTggMTgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE4IDE4OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0ZGRkZGRjt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNOC41LDMuMWgxLjFsMC4zLDUuMUwxNSw4LjV2MS4xTDkuOCw5LjhsLTAuMyw1LjFoLTFMOC4yLDkuOEwzLjEsOS41di0xbDUuMS0wLjNMOC41LDMuMXoiLz48L3N2Zz4=);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center center
+}
+
+
     
 }
 

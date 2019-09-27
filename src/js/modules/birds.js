@@ -1,5 +1,6 @@
 import template from '../../templates/template.html'
 import modalTemplate from '../../templates/modal.html'
+import nominateTemplate from '../../templates/nominate.html'
 import { $, $$, round, numberWithCommas, wait, getDimensions } from '../modules/util'
 import Ractive from 'ractive'
 import ractiveFade from 'ractive-transitions-fade'
@@ -131,6 +132,13 @@ export class Birds {
             self.showModal(id, data)
 
         });
+
+        this.ractive.on( 'nominate', function ( context ) {
+
+            self.showNomination()
+
+        });
+
 
         /*
         this.interval = setInterval(function(){ 
@@ -296,6 +304,47 @@ export class Birds {
         });
 
         self.settings.votecount = self.toolbelt.addCommasToNumbers(self.settings.total)
+
+    }
+
+    showNomination() {
+
+        var self = this
+
+        var modal = new Modal({
+            transitions: { fade: ractiveFade },
+            events: { tap: ractiveTap },
+            template: nominateTemplate,
+            data: {
+                isApp: self.settings.isApp
+            }
+        });
+
+        modal.on('close', function(e) {
+
+            e.original.preventDefault()
+
+        })
+
+        modal.on('nominate', function(e) {
+
+            var bird = $("#nomination-bird").value;
+
+            if (bird != "") {
+
+                var obj = {}
+
+                obj.bird = bird
+
+                var data = [{ "iid" : self.settings.optionID, "input" : obj }]
+
+                this.teardown();
+
+                self.showModal(self.optionID, data)
+
+            }
+
+        })
 
     }
 

@@ -1,0 +1,24 @@
+<div class='modal-background' intro='fade' outro='fade'>
+  <div class='modal-outer'>
+    <div class='modal'>
+    	{{#message}}
+
+      <div class="modal-container">
+
+        <div on-tap='close' class="close"></div>
+
+        <div class="nomination-container">
+           <h2>{{message}}</h2>
+        </div>
+
+        <div class="action-link-container">
+          <a on-tap='close' class="action-button">Cancel</a>
+          <a on-tap='voting' class="action-button voting-link">Vote</a>
+        </div>
+
+      </div>
+
+        {{/message}}
+    </div>
+  </div>
+</div>

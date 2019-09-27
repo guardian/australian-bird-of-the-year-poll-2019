@@ -1,0 +1,133 @@
+@import "mq";
+
+.modal-background {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  padding: 0.5em;
+  text-align: center;
+  -moz-box-sizing: border-box; box-sizing: border-box;
+  z-index: 100002;
+}
+
+.modal-outer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  position: relative;
+  background-color: white;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  display: inline-block;
+  max-width: 600px;
+  max-height: 100%;
+  overflow-y: auto;
+  text-align: left;
+  -moz-box-sizing: border-box; box-sizing: border-box;
+  color: #333;
+  
+  @include mq($until: tablet) {
+    overflow-y: auto;
+  }
+
+}
+
+.modal-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.action-link-container {
+  width: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.nomination-container {
+  width: 100%;
+  display: inline-block;
+  margin-top: 50px;
+}
+
+.nomination-formm, .adoption-form {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.info-box {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: lightgrey;
+  font-family: 'Guardian Sans Web';
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.nomination-label, .nomination-input, .adoption-input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.nomination-input, .adoption-input {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 5px;
+}
+
+#adoption-reason, #nomination-reason {
+  min-height: 100px;
+}
+
+.nominate-link, .voting-link, .adoption-link {
+  float: right;
+}
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  opacity: .2;
+  border-radius: 25px;
+  background-image: url('<%= path %>/assets/close.svg');
+  background-size: cover;
+}
+
+.close:hover {
+  opacity: .8;
+}
+
+p:first-letter {
+  text-transform:capitalize
+}
+
+.action-button {
+  padding: 5px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color .4s, color .4s;
+  border-radius: 25px;
+  line-height: 1.4;
+  border: none;
+  background-color: #767676;
+  font-family: 'Guardian Text Sans Web', TextSans, Arial, sans-serif;
+  text-decoration: none;
+  color: #fff;
+  outline: 0;
+}
+
+.action-button:hover {
+  color: #fff;
+  background-color: #333;
+  text-decoration: none;
+}

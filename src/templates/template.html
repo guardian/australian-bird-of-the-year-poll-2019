@@ -1,0 +1,100 @@
+<div class="grid-wrapper">
+
+    {{#if eligible}}    
+
+    <div class="row birds">
+
+        {{#each bird}}
+
+        <div class="card">
+
+            <div class="main">
+
+                <div class="birdleft">
+
+                    <h3>{{name}}</h3>
+
+                    <small>{{species-name}}</small>
+
+                </div>
+                
+                <div class="birdright">
+                    
+                    <img src="https://interactive.guim.co.uk/embed/aus/2017/nov/bird-pics/{{#if img}}{{img}}{{else}}52_other.png{{/if}}">
+                    
+                </div>
+                
+                <p>{{description}}</p>
+
+            </div>
+        
+            <div class="footer">
+
+                <div on-click="['vote', id]" class="btn vote" data-id="{{id}}">Vote</div>
+                
+            </div>
+
+        </div>
+
+        {{/each}}
+
+    </div>
+
+    {{else}}
+
+        <div id="timestamp">Twitchers: {{votecount}} | Results last updated: {{updated}}</div>
+
+        <div class='row borderBottom'>
+
+        {{#each bird}}
+
+            <div class="row">
+
+                <div class="left-flex">
+                
+                    <div class="categoryIcon" style="background-image:url('https://interactive.guim.co.uk/embed/aus/2017/nov/bird-pics/{{#if img}}{{img}}'{{else}}52_other.png'{{/if}});">
+
+                      <h2 class="center rank">{{rank}}</h2>
+
+                    </div>
+
+                </div>
+
+                <div class="main-col-4">
+
+                    <div class="row resultsItem">
+
+                        <div class="textWrapper figureSans">
+
+                            <div class="textInside">
+
+                                <div class="bar" style="width:{{barWidth}}%;"></div>
+
+                                <div class="scoreboard_container">
+
+                                    <div class="itemHeader">{{name}}</div>
+
+                                    <div class="mobAmount">Votes: {{votes}}</div>
+
+                                </div>
+
+                                <div class="textPanel"><p>{{description}}</p></div>
+
+                            </div>
+
+                        </div>
+                          
+                    </div>
+
+                </div>
+
+            </div>  
+
+        {{/each}}
+
+        </div>
+
+
+    {{/if}}
+
+</div>

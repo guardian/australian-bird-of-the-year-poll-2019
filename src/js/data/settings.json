@@ -6,7 +6,7 @@
 
     "random" : true,
 
-    "expandible" : false,
+    "expandible" : true,
 
     "optionID" : 60,
 

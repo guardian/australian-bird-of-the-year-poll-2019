@@ -8,29 +8,27 @@
 
         <div class="card">
 
-            <div class="main">
+            <div class="bird-header">
 
-                <div class="birdleft">
+                <h3>{{name}}</h3>
 
-                    <h3>{{name}}</h3>
+                <small>{{species}}</small>
 
-                    <small>{{species-name}}</small>
+            </div>
 
-                </div>
+            <div class="bird-bio">
+
+                <div class="bird-description">{{description}}</div>
                 
-                <div class="birdright">
-                    
-                    <img src="https://interactive.guim.co.uk/embed/aus/2017/nov/bird-pics/{{#if img}}{{img}}{{else}}52_other.png{{/if}}">
-                    
-                </div>
+                <div class="bird-image" style="background-image:url('https://interactive.guim.co.uk/embed/aus/2019/bird-pics/{{#if img}}{{img}}'{{else}}52_other.png'{{/if}});"></div>
                 
-                <p>{{description}}</p>
+                
 
             </div>
         
             <div class="footer">
 
-                <div on-click="['vote', id]" class="btn vote" data-id="{{id}}">Vote</div>
+                <div on-click="['vote', id]" class="vote">Vote</div>
                 
             </div>
 
@@ -40,62 +38,57 @@
 
     </div>
 
-    <div class="nominate_bird_bar">If your bird is not on the list: <a on-click="['nominate']">Vote for a new bird</a></div>
+    <div class="nominate_bird_bar">Your pick not listed? <a on-click="['nominate']">nominate it here</a></div>
 
     {{else}}
 
-        <div id="timestamp">Twitchers: {{votecount}} | Results last updated: {{updated}}</div>
+    <div id="timestamp">Twitchers: {{votecount}} | Results last updated: {{updated}}</div>
 
-        <div class='row borderBottom'>
+    {{#each bird}}
 
-        {{#each bird}}
+        <div class="results-block">
 
-            <div class="row">
+            <div class="ranking-block">
+            
+                <div class="birdrank" style="background-image:url('https://interactive.guim.co.uk/embed/aus/2019/bird-pics/{{#if img}}{{img}}'{{else}}52_other.png'{{/if}});">
 
-                <div class="left-flex">
-                
-                    <div class="categoryIcon" style="background-image:url('https://interactive.guim.co.uk/embed/aus/2017/nov/bird-pics/{{#if img}}{{img}}'{{else}}52_other.png'{{/if}});">
-
-                      <h2 class="center rank">{{rank}}</h2>
-
-                    </div>
+                  <h2 class="center rank">{{rank}}</h2>
 
                 </div>
 
-                <div class="main-col-4">
+            </div>
 
-                    <div class="row resultsItem">
+            <div class="bar-block">
 
-                        <div class="textWrapper figureSans">
+                <div class="info-block">
 
-                            <div class="textInside">
+                    <div class="textWrapper figureSans">
 
-                                <div class="bar" style="width:{{barWidth}}%;"></div>
+                        <div class="textInside">
 
-                                <div class="scoreboard_container">
+                            <div class="bar" style="width:{{barWidth}}%;"></div>
 
-                                    <div class="itemHeader">{{name}}</div>
+                            <div class="scoreboard_container">
 
-                                    <div class="mobAmount">Votes: {{votes}}</div>
+                                <div class="itemHeader">{{name}}</div>
 
-                                </div>
-
-                                <div class="textPanel"><p>{{description}}</p></div>
+                                <div class="votecount">Votes: {{votes}}</div>
 
                             </div>
 
-                        </div>
-                          
-                    </div>
+                            <div class="textPanel"><p>{{description}}</p></div>
 
+                        </div>
+
+                    </div>
+                      
                 </div>
 
-            </div>  
+            </div>
 
-        {{/each}}
+        </div>  
 
-        </div>
-
+    {{/each}}
 
     {{/if}}
 

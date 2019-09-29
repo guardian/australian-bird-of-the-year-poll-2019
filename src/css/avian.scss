@@ -1,0 +1,221 @@
+@import "mq";
+
+#app {
+
+	margin-bottom: 65px;
+	display: inline-block;
+	width: 100%;
+
+    .grid-wrapper {
+        max-width: 1260px;
+        padding: 20px;
+        margin: auto;
+    }
+
+    .row {
+    	width: 100%;
+    }
+
+    .card {
+
+    	box-sizing: border-box;
+		border-top: 2px solid #dadada;
+		position: relative;
+
+
+	    @include mq($until: tablet) {
+	        width: 100%;
+	        min-height: 180px;
+	        display: inline-block;
+	    }
+	    @include mq($from: tablet, $until: desktop) {
+	        width: 50%;
+	        padding-bottom: 260px;
+	        height: 0px;
+	        float: left;
+	    }
+	    @include mq($from: desktop) {
+	        width: 33.3%;
+	        padding-bottom: 300px;
+	        height: 0px;
+	        float: left;
+	    }
+
+    }
+
+    .bird-header {
+
+    	
+    	padding-left: 20px;
+    	padding-right: 20px;
+    	padding-top: 10px;
+    	box-sizing: border-box;
+
+	    @include mq($until: tablet) {
+	        width: calc(100% - 120px);
+	        padding-bottom: 10px;
+	    }
+	    @include mq($from: tablet, $until: desktop) {
+	        height: 70px;
+	        width: 100%;
+	    }
+	    @include mq($from: desktop) {
+	        height: 70px;
+	        width: 100%;
+	    }
+
+	    h3 {
+	    	color: #109691;
+	    	margin: 0px;
+	    	font-size: 18px;
+	    	font-weight: 600;
+	    	font-family: 'Guardian Egyptian Web', Georgia, serif;
+
+	    }
+
+		small {
+			font-size: 12px;
+			margin: 0px;
+			color: #109691;
+			font-family: 'Guardian Egyptian Web', Georgia, serif;
+
+		}
+
+    }
+
+    .bird-bio {
+
+    	width: 100%;
+    	box-sizing: border-box;
+    	padding-left: 20px;
+    	padding-right: 20px;
+
+	    @include mq($from: mobile, $until: tablet) {
+
+	    }
+	    @include mq($from: tablet, $until: desktop) {
+	        height: 140px;
+	    }
+	    @include mq($from: desktop) {
+	        height: 180px;
+	    }
+
+    }
+
+    .bird-description {
+
+
+	    @include mq($until: tablet) {
+    		width: calc(100% - 110px);
+    		min-height: 60px;
+	    }
+	    @include mq($from: tablet, $until: desktop) {
+    		width: calc(100% - 110px);
+    		float: left;
+	    }
+	    @include mq($from: desktop) {
+    		width: calc(100% - 110px);
+    		float: left;
+	    }
+
+    	font-family: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+		font-size: 14px;
+    }
+
+    .bird-image {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        float: right;
+        background-position: center; 
+
+
+	    @include mq($until: tablet) {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+	    }
+
+	    @include mq($from: tablet) {
+
+	    }
+
+    }
+
+
+    .footer {
+
+
+	    @include mq($until: tablet) {
+    		width: 120px;
+    		float: right;
+	    }
+
+	    @include mq($from: tablet) {
+    		width: 100%;
+	    }
+    	
+    	height: 40px;
+
+
+    	.vote {
+    		cursor: pointer;
+		    float: right;
+		    width: 60px;
+		    height: 30px;
+		    line-height: 30px;
+		    text-align: center;
+		    background-color: #109691;
+		    color: white;
+			font-size: 12px;
+			border-radius: 15px;
+			font-family: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    	
+		    @include mq($until: tablet) {
+    			margin-right: 30px;
+	    	}
+
+		    @include mq($from: tablet) {
+	    		margin-right: 20px;
+		    }
+
+
+    	}
+
+    }
+
+    .nominate_bird_bar {
+        box-sizing: border-box;
+        position: fixed;
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: yellow;
+        z-index: 99;
+    }
+
+	.nominate_bird {
+	    height: 30px;
+	    display: inline-block;
+	    float: left;
+	    background-color: #4bc6df;
+	    margin-right: 10px;
+	    box-sizing: border-box;
+	    padding: 5px;
+	    border-radius: 15px;
+	    line-height: 30px;
+	    cursor: pointer;
+	    font-weight: 900;
+	    font-family: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+	}
+
+	.nominate_bird span {
+		margin-top: -4px;
+		font-size: 14px;
+		color: black;
+	}
+	
+}

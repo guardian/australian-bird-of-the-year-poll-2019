@@ -32,7 +32,7 @@ export class Birds {
 
             if (this.settings.localstore) {
 
-                localStorage.removeItem('ga_poll_birdpoll_2019' + self.settings.cid)
+                localStorage.removeItem(self.settings.cookie)
 
             }
 
@@ -42,9 +42,9 @@ export class Birds {
 
             if (this.settings.localstore) {
 
-                if (localStorage.getItem('ga_poll_birdpoll_2019' + self.settings.cid)) {
+                if (localStorage.getItem(self.settings.cookie)) {
 
-                    let json = JSON.parse( localStorage.getItem('ga_poll_birdpoll_2019' + self.settings.cid) )
+                    let json = JSON.parse( localStorage.getItem(self.settings.cookie) )
 
                     self.uid = json.uid
 
@@ -154,10 +154,9 @@ export class Birds {
 
         });
 
-        /*
         this.interval = setInterval(function(){ 
 
-            var ts = Math.round((new Date()).getTime()) / 1000;
+            var ts = Math.floor( Math.round((new Date()).getTime()) / 1000 ) ;
 
             if (ts > self.settings.closing) {
 
@@ -173,14 +172,14 @@ export class Birds {
 
                 if (self.settings.testing) {
 
-                    console.log("Beep " + (self.settings.closing - ts))
+                    console.log("Beep " + (self.settings.competition_closing_time - ts))
 
                 }
 
             }
 
-        }, 1000);
-        */
+
+        }, 60000);
 
 	}
 
@@ -204,9 +203,9 @@ export class Birds {
 
             if (self.settings.localstore) {
 
-                if (!localStorage.getItem('ga_poll_birdpoll_2019' + self.settings.cid)) {
+                if (!localStorage.getItem(self.settings.cookie)) {
 
-                    localStorage.setItem('ga_poll_birdpoll_2019' + self.settings.cid, JSON.stringify({ "uid" : self.uid, "cid" : self.settings.cid, "key" : self.settings.key, "data" : data }))
+                    localStorage.setItem(self.settings.cookie, JSON.stringify({ "uid" : self.uid, "cid" : self.settings.cid, "key" : self.settings.key, "data" : data }))
 
                     self.settings.preflight = false
 
@@ -276,6 +275,8 @@ export class Birds {
 
         self.settings.total = self.settings.total + 1
 
+        self.settings.max = Math.max.apply(Math, self.googledoc.map(function(o) { return o.votes; }))
+
         self.googledoc.forEach((value) => {
 
             if (value.id===id) {
@@ -313,7 +314,7 @@ export class Birds {
 
             value["rank"] = index + 1
 
-            value['barWidth'] = (value['votes'] / self.settings.total ) * 100;
+            value['barWidth'] = (value['votes'] / self.settings.max ) * 100;
 
         });
 

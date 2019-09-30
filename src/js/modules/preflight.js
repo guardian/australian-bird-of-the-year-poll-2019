@@ -30,7 +30,11 @@ export class Preflight {
 
         this.settings.key = key
 
+        this.settings.cookie = (this.settings.testing) ? `ga_dev_${this.settings.key}` : `ga_${this.settings.key}` ;
+
         this.settings.total = 0
+
+        this.settings.max = 0
 
         this.settings.votecount = 0
 
@@ -146,6 +150,8 @@ export class Preflight {
         }
 
         if (self.settings.voting) {
+
+            self.settings.max = Math.max.apply(Math, self.googledoc.map(function(o) { return o.votes; }))
 
             self.settings.total = self.googledoc.reduce((acc, val) => { return acc + val.votes; }, 0)
 

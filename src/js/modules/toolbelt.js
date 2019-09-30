@@ -142,7 +142,7 @@ export class Toolbelt {
     getShareUrl() { 
         var isInIframe = (parent !== window);
         var parentUrl = null;
-        shareUrl = (isInIframe) ? document.referrer : shareUrl = window.location.href;
+        var shareUrl = (isInIframe) ? document.referrer : window.location.href;
         return shareUrl;  
     }
 

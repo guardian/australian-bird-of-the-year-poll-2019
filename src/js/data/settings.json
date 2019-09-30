@@ -14,15 +14,15 @@
 
     "social_title" : "Australian Bird of the year poll 2019",
 
-    "social_message" : "",
+    "social_message" : "Vote for your favourite Australian bird of 2019",
 
-    "social_hashed" : "#BirdOfTheYear",
+    "social_hashed" : "#BirdOfTheYear2019",
 
-    "social_image" : "",
+    "social_fbImg" : "",
+
+    "social_twImg" : "",
 
     "preflight" : true,
-
-    "social_sharelink" : "https://www.theguardian.com/environment/ng-interactive/2018/dec/07/bird-photo-of-the-year-2018-your-chance-to-vote-for-the-winner",
 
     "palette" : ["#197caa", "#4bc6df", "#7d0068", "#dc2a7d", "#b51800", "#4e0375", "#e6711b", "#72af7e", "#298422"]
 

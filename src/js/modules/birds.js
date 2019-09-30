@@ -10,6 +10,7 @@ import smoothscroll from 'smoothscroll-polyfill';
 import { Toolbelt } from '../modules/toolbelt'
 import Modal from '../modules/modal'
 import moment from 'moment'
+import share from '../modules/share'
 Ractive.DEBUG = false;
 smoothscroll.polyfill();
 
@@ -99,6 +100,8 @@ export class Birds {
 
                 isApp: self.settings.isApp,
 
+                isIos: self.settings.isIos,
+
                 votecount : self.settings.votecount,
 
                 updated: moment().format("hh:mm A"),
@@ -139,6 +142,15 @@ export class Birds {
 
         });
 
+        this.ractive.on( 'social', ( context, channel ) => {
+
+            var shareURL = self.toolbelt.getShareUrl()
+
+            let shared = share(self.settings.social_title, shareURL, self.settings.social_fbImg, self.settings.social_twImg, self.settings.social_hashed, self.settings.social_message);
+        
+            shared(channel);
+
+        });
 
         /*
         this.interval = setInterval(function(){ 

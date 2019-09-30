@@ -1,0 +1,374 @@
+@import "mq";
+
+
+.intro {
+	width: 100%;
+	max-width: 729px;
+	margin: auto;
+	z-index: 1;
+}
+
+.app_space_bar {
+	width: 100%;
+	height: 80px;
+}
+
+.secondary {
+	fill: #d78f66;
+	font-size: 12px;
+	font-family: 'Guardian Text Sans Web', TextSans, Arial, sans-serif;
+}
+
+.drop-cap {
+    font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+    float: left;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 200;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 0.0625rem;
+    margin-right: 0.3125rem;
+    
+    color: #109691;
+
+	@include mq($until: tablet) {
+		font-size: 18px;
+		line-height: 22px;
+		height: 44px;
+	}
+
+	@include mq($from: tablet) {
+		font-size: 22px;
+		line-height: 24px;
+		height: 50px;
+	}
+
+}
+
+.drop-cap__inner {
+
+	@include mq($until: tablet) {
+		font-size: 18px;
+		line-height: 22px;
+	}
+
+	@include mq($from: tablet) {
+		font-size: 22px;
+		line-height: 24px;
+	}
+}
+
+
+
+.keyart, .keyart_layer {
+	height: 0px;
+	padding-bottom: 66%;
+}
+
+#parallax {
+	display: none;
+}
+
+#nonparallax {
+	height: 0px;
+	padding-bottom: 60%;
+	position: relative;
+	background-image: url('<%= path %>/assets/mobile.jpg');
+	z-index: 10;
+	background-size: cover;
+	background-position: bottom center;
+}
+
+
+#parallax {
+	height: 0px;
+	padding-bottom: 60%;
+	position: relative;
+	background-color: #7BC396;
+	z-index: 10;
+	overflow: hidden;
+}
+
+.foreground {
+	position: absolute;
+	z-index: 14;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	background-image: url('<%= path %>/assets/white_forground.png');
+	background-size: cover;
+	background-position: bottom center;
+}
+
+#keyart-1 {
+	z-index: 12;
+	background-image: url('<%= path %>/assets/mid-ground.png');
+	background-size: cover;
+	background-position: center center;
+
+}
+
+#keyart-2 {
+	z-index: 13;
+	background-image: url('<%= path %>/assets/bird-tree.png');
+	background-size: cover;
+	background-position: center center;
+
+}
+
+#keyart-3 {
+	z-index: 11;
+	background-image: url('<%= path %>/assets/centre-ground.png');
+	background-size: cover;
+	background-position: center center;
+
+}
+
+#keyart-4 {
+	z-index: 15;
+	background-image: url('<%= path %>/assets/canopy.png');
+	background-size: cover;
+	background-position: center center;
+}
+
+#keyart-5 {
+	z-index: 16;
+	background-image: url('<%= path %>/assets/title.png');
+	background-size: cover;
+	background-position: center center;
+}
+
+.keyart_layer {
+	
+	background-size: auto 1038px;
+	background-repeat: repeat-x;
+	width: 100%;
+	position: absolute;
+}
+
+.keyart_layer.parallax {
+	position: absolute;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 880px) {
+	.section.support ul.supportlinks {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.section.support .supportlinks .link.techsupport a {
+		margin: 0 50px 0 0;
+	}
+	.section.support .supportlinks .link.streaming a {
+		margin: 0 0 0 50px;
+	}
+
+	.columntext p {
+		display: inline;
+	}
+	.columntext p.left {
+		margin: 0;
+	}
+
+	.section.description {
+		margin-bottom: 50px;
+	}
+
+	.section.screenshots .thumbnails li {
+		width: 100%;
+		height: auto;
+	}
+	.section.screenshots .thumbnails li:nth-child(odd) {
+    	margin-right: 0px;
+	}
+
+	.columntext p {
+		margin-bottom: 1.6em;
+		width: 325px;
+	}
+
+	.section.buy ul {
+		margin-left: 0px;
+	}
+
+	
+	ul.links.smalllinks li h4 {
+		max-width: 267px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.section.companylinks {
+		margin: 50px auto;
+		padding-right: 0;
+	}	
+
+}
+
+@media (max-width: 830px) {
+	ul.links.smalllinks {
+		margin: 0 5px;
+	}
+}
+
+@media (max-width: 820px) {
+	.supportlinks.smalllinks li h4 {
+		letter-spacing: 2px;
+	}
+
+}
+
+
+@media (max-width: 780px) {
+
+	.section.support ul.supportlinks {
+		max-width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+		background: none;
+	}	
+
+	.section.support .supportlinks li {
+		display: block;
+		width: 100%;
+	}
+	.section.support .supportlinks .link.techsupport a, .section.support .supportlinks .link.streaming a {
+		margin: 0;
+	}
+
+	.smalllinks.switch h4.banner span {
+		display: inline-block;
+		max-width: auto;
+	}
+}
+
+@media (max-width: 750px) {
+	ul.links.smalllinks {
+		margin: 0;
+	}
+}
+
+@media (max-width: 740px) {
+	.section.buy li {
+		display: block;
+	}
+	.section.buy li.steam {
+		margin-right: 0;
+	}
+}
+
+@media (max-width: 730px) {
+	ul.links.smalllinks {
+		display: block;
+		width: auto;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 601px) {
+
+	#nonparallax {
+		display: none;
+	}
+	#parallax {
+		display: block;
+	}
+
+}
+
+@media (max-width: 600px) {
+
+	#nonparallax {
+		display: block;
+	}
+	#parallax {
+		display: none;
+	}
+
+	#main {
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 20px;
+	}
+
+	.section.copyright p {
+		font-size: 12px;
+		line-height: 20px;
+		letter-spacing: 1px;
+	}
+	.section.companylinks .companies li h1 {
+		margin: 20px;
+	}
+}
+
+@media only screen and (max-device-width: 450px) {
+
+	.section.buy h2 {
+		font-size: 22px;
+		letter-spacing: 3px;
+		font-weight: 700;
+		line-height: 28px;
+	}
+	.section.buy h2.banner span {
+		padding-top: 7px;
+		padding-bottom: 7px;
+	}
+	.withxbone .section.buy h2.banner span {
+		padding-top: 6px;
+		padding-bottom: 8px;
+	}
+
+	.columntext p {
+		font-size: 23px;
+	}
+
+	.section.pressquote.big h2 {
+		font-size: 28px;
+		letter-spacing: 1px;
+	}
+	.section.pressquote.big h3 {
+		font-size: 16px;
+	}
+
+	.section.screenshots .thumbnails li {
+		opacity: 1;
+	}
+
+	.supportlinks.smalllinks li h4 {
+		letter-spacing: 1px;
+	}
+
+	.section.copyright {
+		margin-top: 60px;
+	}
+	.section.copyright p {
+		font-size: 10px;
+		line-height: 16px;
+		letter-spacing: 1px;
+	}
+	ul.awards {
+		display: none;
+	}
+
+/* PARALLAX */
+
+	.keyart, .keyart_layer {
+		height: 550px;
+	}
+
+	.keyart_layer {
+		position: absolute;
+		background-size: auto 600px;
+	}
+}
+
+
+

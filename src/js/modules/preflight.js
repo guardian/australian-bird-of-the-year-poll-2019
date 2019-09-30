@@ -22,6 +22,8 @@ export class Preflight {
 
         this.settings.isIos = this.ios()
 
+        this.settings.isIosApp = (this.settings.isIos && this.settings.isApp) ? true : false ;
+
         this.settings.localstore = this.localStorage()
 
         this.settings.randomID = this.randomString(32)

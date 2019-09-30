@@ -102,6 +102,8 @@ export class Birds {
 
                 isIos: self.settings.isIos,
 
+                isIosApp: self.settings.isIosApp,
+
                 votecount : self.settings.votecount,
 
                 updated: moment().format("hh:mm A"),

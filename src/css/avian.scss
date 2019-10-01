@@ -129,7 +129,7 @@
         border-radius: 50%;
         float: right;
         background-position: center; 
-
+        background-size: 100%;
 
 	    @include mq($until: tablet) {
 			position: absolute;

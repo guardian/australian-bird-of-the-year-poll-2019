@@ -64,31 +64,60 @@
 
 .keyart, .keyart_layer {
 	height: 0px;
-	padding-bottom: 66%;
+	padding-bottom: 65%;
 }
 
 #parallax {
 	display: none;
 }
 
-#nonparallax {
-	height: 0px;
-	padding-bottom: 60%;
-	position: relative;
-	background-image: url('<%= path %>/assets/mobile.jpg');
-	z-index: 10;
-	background-size: cover;
-	background-position: bottom center;
-}
+
 
 
 #parallax {
 	height: 0px;
-	padding-bottom: 60%;
+	padding-bottom: 65%;
 	position: relative;
 	background-color: #7BC396;
 	z-index: 10;
 	overflow: hidden;
+}
+
+
+#nonparallax {
+	height: 0px;
+	padding-bottom: 60%;
+	position: relative;
+	
+	z-index: 10;
+	background-size: cover;
+	background-position: bottom center;
+
+	@include mq($until: mobile) {
+		background-image: url('<%= path %>/assets/320/background.jpg');
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) {
+		background-image: url('<%= path %>/assets/480/background.jpg');
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) {
+		background-image: url('<%= path %>/assets/740/background.jpg');
+	}
+
+	@include mq($from: tablet, $until: desktop) {
+		background-image: url('<%= path %>/assets/980/background.jpg');
+	}
+
+	@include mq($from: desktop, $until: wide) {
+		background-image: url('<%= path %>/assets/1300/background.jpg');
+	}
+
+	@include mq($from: wide) {
+		background-image: url('<%= path %>/assets/2000/background.jpg');
+	}
+
+
 }
 
 .foreground {
@@ -98,47 +127,191 @@
 	left: 0px;
 	bottom: 0px;
 	width: 100%;
-	background-image: url('<%= path %>/assets/white_forground.png');
 	background-size: cover;
 	background-position: bottom center;
+
+	@include mq($until: mobile) {
+		background-image: url('<%= path %>/assets/320/white_forground.png');
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) {
+		background-image: url('<%= path %>/assets/480/white_forground.png');
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) {
+		background-image: url('<%= path %>/assets/740/white_forground.png');
+	}
+
+	@include mq($from: tablet, $until: desktop) {
+		background-image: url('<%= path %>/assets/980/white_forground.png');
+	}
+
+	@include mq($from: desktop, $until: wide) {
+		background-image: url('<%= path %>/assets/1300/white_forground.png');
+	}
+
+	@include mq($from: wide) {
+		background-image: url('<%= path %>/assets/2000/white_forground.png');
+	}
+
 }
 
 #keyart-1 {
 	z-index: 12;
-	background-image: url('<%= path %>/assets/mid-ground.png');
 	background-size: cover;
 	background-position: center center;
+
+	@include mq($until: mobile) {
+		background-image: url('<%= path %>/assets/320/mid-ground.png');
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) {
+		background-image: url('<%= path %>/assets/480/mid-ground.png');
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) {
+		background-image: url('<%= path %>/assets/740/mid-ground.png');
+	}
+
+	@include mq($from: tablet, $until: desktop) {
+		background-image: url('<%= path %>/assets/980/mid-ground.png');
+	}
+
+	@include mq($from: desktop, $until: wide) {
+		background-image: url('<%= path %>/assets/1300/mid-ground.png');
+	}
+
+	@include mq($from: wide) {
+		background-image: url('<%= path %>/assets/2000/mid-ground.png');
+	}
+
 
 }
 
 #keyart-2 {
 	z-index: 13;
-	background-image: url('<%= path %>/assets/bird-tree.png');
 	background-size: cover;
 	background-position: center center;
+
+	@include mq($until: mobile) {
+		background-image: url('<%= path %>/assets/320/bird-tree.png');
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) {
+		background-image: url('<%= path %>/assets/480/bird-tree.png');
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) {
+		background-image: url('<%= path %>/assets/740/bird-tree.png');
+	}
+
+	@include mq($from: tablet, $until: desktop) {
+		background-image: url('<%= path %>/assets/980/bird-tree.png');
+	}
+
+	@include mq($from: desktop, $until: wide) {
+		background-image: url('<%= path %>/assets/1300/bird-tree.png');
+	}
+
+	@include mq($from: wide) {
+		background-image: url('<%= path %>/assets/2000/bird-tree.png');
+	}
+
 
 }
 
 #keyart-3 {
 	z-index: 11;
-	background-image: url('<%= path %>/assets/centre-ground.png');
 	background-size: cover;
 	background-position: center center;
+
+	@include mq($until: mobile) {
+		background-image: url('<%= path %>/assets/320/centre-ground.png');
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) {
+		background-image: url('<%= path %>/assets/480/centre-ground.png');
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) {
+		background-image: url('<%= path %>/assets/740/centre-ground.png');
+	}
+
+	@include mq($from: tablet, $until: desktop) {
+		background-image: url('<%= path %>/assets/980/centre-ground.png');
+	}
+
+	@include mq($from: desktop, $until: wide) {
+		background-image: url('<%= path %>/assets/1300/centre-ground.png');
+	}
+
+	@include mq($from: wide) {
+		background-image: url('<%= path %>/assets/2000/centre-ground.png');
+	}
+
 
 }
 
 #keyart-4 {
 	z-index: 15;
-	background-image: url('<%= path %>/assets/canopy.png');
 	background-size: cover;
 	background-position: center center;
+
+	@include mq($until: mobile) {
+		background-image: url('<%= path %>/assets/320/canopy.png');
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) {
+		background-image: url('<%= path %>/assets/480/canopy.png');
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) {
+		background-image: url('<%= path %>/assets/740/canopy.png');
+	}
+
+	@include mq($from: tablet, $until: desktop) {
+		background-image: url('<%= path %>/assets/980/canopy.png');
+	}
+
+	@include mq($from: desktop, $until: wide) {
+		background-image: url('<%= path %>/assets/1300/canopy.png');
+	}
+
+	@include mq($from: wide) {
+		background-image: url('<%= path %>/assets/2000/canopy.png');
+	}
+
 }
 
 #keyart-5 {
 	z-index: 16;
-	background-image: url('<%= path %>/assets/title.png');
 	background-size: cover;
 	background-position: center center;
+
+	@include mq($until: mobile) {
+		background-image: url('<%= path %>/assets/320/title.png');
+	}
+
+	@include mq($from: mobile, $until: mobileLandscape) {
+		background-image: url('<%= path %>/assets/480/title.png');
+	}
+
+	@include mq($from: mobileLandscape, $until: tablet) {
+		background-image: url('<%= path %>/assets/740/title.png');
+	}
+
+	@include mq($from: tablet, $until: desktop) {
+		background-image: url('<%= path %>/assets/980/title.png');
+	}
+
+	@include mq($from: desktop, $until: wide) {
+		background-image: url('<%= path %>/assets/1300/title.png');
+	}
+
+	@include mq($from: wide) {
+		background-image: url('<%= path %>/assets/2000/title.png');
+	}
+
 }
 
 .keyart_layer {

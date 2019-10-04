@@ -1,5 +1,9 @@
 @import "mq";
 
+.interactive-universe {
+	background-color: white;
+}
+
 #app {
 
 	z-index: 99;
@@ -29,13 +33,13 @@
 	        min-height: 180px;
 	        display: inline-block;
 	    }
-	    @include mq($from: tablet, $until: desktop) {
+	    @include mq($from: tablet, $until: wide) {
 	        width: 50%;
 	        padding-bottom: 260px;
 	        height: 0px;
 	        float: left;
 	    }
-	    @include mq($from: desktop) {
+	    @include mq($from: wide) {
 	        width: 33.3%;
 	        padding-bottom: 300px;
 	        height: 0px;
@@ -47,8 +51,8 @@
     .bird-header {
 
     	
-    	padding-left: 20px;
-    	padding-right: 20px;
+    	padding-left: 10px;
+    	padding-right: 10px;
     	padding-top: 10px;
     	box-sizing: border-box;
 
@@ -56,11 +60,11 @@
 	        width: calc(100% - 120px);
 	        padding-bottom: 10px;
 	    }
-	    @include mq($from: tablet, $until: desktop) {
+	    @include mq($from: tablet, $until: wide) {
 	        height: 70px;
 	        width: 100%;
 	    }
-	    @include mq($from: desktop) {
+	    @include mq($from: wide) {
 	        height: 70px;
 	        width: 100%;
 	    }
@@ -88,16 +92,16 @@
 
     	width: 100%;
     	box-sizing: border-box;
-    	padding-left: 20px;
-    	padding-right: 20px;
+    	padding-left: 10px;
+    	padding-right: 10px;
 
 	    @include mq($from: mobile, $until: tablet) {
 
 	    }
-	    @include mq($from: tablet, $until: desktop) {
+	    @include mq($from: tablet, $until: wide) {
 	        height: 140px;
 	    }
-	    @include mq($from: desktop) {
+	    @include mq($from: wide) {
 	        height: 180px;
 	    }
 
@@ -110,17 +114,18 @@
     		width: calc(100% - 110px);
     		min-height: 60px;
 	    }
-	    @include mq($from: tablet, $until: desktop) {
-    		width: calc(100% - 110px);
+	    @include mq($from: tablet, $until: wide) {
+    		width: calc(100% - 95px);
     		float: left;
 	    }
-	    @include mq($from: desktop) {
-    		width: calc(100% - 110px);
+	    @include mq($from: wide) {
+    		width: calc(100% - 95px);
     		float: left;
 	    }
 
     	font-family: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 		font-size: 14px;
+		line-height: 19px;
     }
 
     .bird-image {

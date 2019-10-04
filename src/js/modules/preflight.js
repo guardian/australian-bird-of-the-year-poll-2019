@@ -112,18 +112,18 @@ export class Preflight {
                 if (localStorage.getItem('verify') === 'confirm') {
                     localStorage.removeItem('verify');
                     //localStorage is enabled
-                    self.localstore = true;
+                    return true;
                 } else {
                     //localStorage is disabled
-                    self.localstore = false;
+                    return false;
                 }
             } catch(e) {
                 //localStorage is disabled
-                self.localstore = false;
+                return false;
             }
         } else {
             //localStorage is not available
-            self.localstore = false;
+            return false;
         }
     }
 

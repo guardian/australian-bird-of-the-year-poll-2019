@@ -49,7 +49,7 @@ export class Birds {
                     self.uid = json.uid
 
                     self.settings.preflight = false
-      
+
                 }
 
             }
@@ -248,19 +248,7 @@ export class Birds {
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-type", "application/json");
         xhr.onreadystatechange = function () { 
-            if (xhr.readyState == 4 && xhr.status == 200) {
-
-                var json = JSON.parse(xhr.responseText);
-
-                if (json.status < 70 && self.voting) {
-
-                    self.settings.preflight = false
-
-                }
-
-                console.log(json.status)
-               
-            }
+            console.log(`${xhr.readyState} - ${xhr.status}`)
         }
 
         xhr.send(data);

@@ -2,7 +2,7 @@
 
     "competition_closing_time" : 1573131599,
 
-    "testing" : true,
+    "testing" : false,
 
     "random" : true,
 
@@ -18,9 +18,9 @@
 
     "social_hashed" : "#BirdOfTheYear",
 
-    "social_fbImg" : "",
+    "social_fbImg" : "<%= path %>/assets/1300/background.jpg",
 
-    "social_twImg" : "",
+    "social_twImg" : "<%= path %>/assets/1300/background.jpg",
 
     "preflight" : true,
 

@@ -146,9 +146,10 @@ export class Birds {
 
         this.ractive.on( 'social', ( context, channel ) => {
 
-            var shareURL = self.toolbelt.getShareUrl()
 
-            let shared = share(self.settings.social_title, shareURL, self.settings.social_fbImg, self.settings.social_twImg, self.settings.social_hashed, self.settings.social_message);
+            var shareURL = "https://www.theguardian.com/environment/ng-interactive/2019/oct/27/australian-bird-of-the-year-2019-vote-for-your-favourite"
+
+            let shared = share(self.settings.social_title, shareURL, self.settings.social_fbImg, "", self.settings.social_hashed, self.settings.social_message);
         
             shared(channel);
 

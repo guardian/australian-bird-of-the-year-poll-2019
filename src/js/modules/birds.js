@@ -132,7 +132,7 @@ export class Birds {
 
         this.ractive.on( 'vote', function ( context, id ) {
 
-            var data = [{ "iid" : id }]
+            var data = [{ "iid" : id, "settings" : self.settings }]
 
             self.showModal(id, data)
 
@@ -339,7 +339,7 @@ export class Birds {
 
                 obj.bird = bird
 
-                var data = [{ "iid" : self.settings.optionID, "input" : obj }]
+                var data = [{ "iid" : self.settings.optionID, "input" : obj, "settings" : self.settings  }]
 
                 this.teardown();
 

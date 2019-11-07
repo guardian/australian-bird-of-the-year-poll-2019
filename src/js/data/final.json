@@ -6,7 +6,7 @@
 
     "random" : true,
 
-    "expandible" : true,
+    "expandible" : false,
 
     "optionID" : 60,
 
@@ -26,6 +26,6 @@
 
     "palette" : ["#197caa", "#4bc6df", "#7d0068", "#dc2a7d", "#b51800", "#4e0375", "#e6711b", "#72af7e", "#298422"],
 
-    "final" : false
+    "final" : true
 
 }

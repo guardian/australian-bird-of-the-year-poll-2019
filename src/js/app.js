@@ -1,8 +1,11 @@
 import settings from './data/settings'
+import final from './data/final'
 import { Preflight } from './modules/preflight'
 import { Birds } from './modules/birds'
 import loadJson from '../components/load-json/'
 import { $, $$, round, numberWithCommas, wait, getDimensions } from './modules/util'
+
+var ts = Math.floor( Math.round((new Date()).getTime()) / 1000 ) ;
 
 var app = {
 
@@ -13,7 +16,9 @@ var app = {
 		loadJson(`https://interactive.guim.co.uk/firehose/${key}.json?t=${new Date().getTime()}`)
 			.then((data) => {
 
-				var wrangle = new Preflight(data, key, settings)
+				var setting = (ts > settings.competition_closing_time) ? final : settings ;
+
+				var wrangle = new Preflight(data, key, setting)
 
 				wrangle.process().then( (application) => {
 
@@ -80,4 +85,6 @@ var app = {
 
 }
 
-app.init("1R3zG-DJRqN7MFLGqjhZs26D1SJcKI7pkd1j1XDwAiIM")
+var key = (ts > settings.competition_closing_time) ? "1irvuwqP62kpH7P0tf2Qy_KqFGXaZ8CLLaEEHCXqDhzQ" : "1R3zG-DJRqN7MFLGqjhZs26D1SJcKI7pkd1j1XDwAiIM" ;
+
+app.init(key)

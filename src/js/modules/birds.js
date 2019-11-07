@@ -26,6 +26,10 @@ export class Birds {
 
         this.settings = application.settings 
 
+        this.displayCountdown = false
+
+        this.countdown = null
+
         if (this.settings.testing) {
 
             self.uid = this.settings.randomID
@@ -58,9 +62,9 @@ export class Birds {
 
         var ts = Math.round((new Date()).getTime()) / 1000
 
-        if (ts > self.settings.closing) {
+        if (ts > self.settings.competition_closing_time) {
 
-            self.settings.preflight = false
+            // self.settings.preflight = false
 
         }
 
@@ -77,6 +81,31 @@ export class Birds {
         this.ractivate()
 
 	}
+
+    displayTime(time) {
+
+        var self = this
+
+        var millisecondsinSecond = 1000,
+        millisecondsinMinute = 60 * millisecondsinSecond,
+        millisecondsinHour = 60 * millisecondsinMinute,
+        millisecondsInDay = 24 * millisecondsinHour,
+        millisecondsinYear = 365 * millisecondsInDay;
+
+        var timeUntil = this.settings.competition_closing_time - time;
+
+        var obj = {}
+        obj.years = Math.floor(timeUntil / millisecondsinYear),
+        obj.days = Math.floor((timeUntil % millisecondsinYear)/millisecondsInDay),
+        obj.hours = Math.floor((timeUntil % millisecondsInDay)/millisecondsinHour),
+        obj.mins = Math.floor((timeUntil % millisecondsinHour)/millisecondsinMinute),
+        obj.secs = parseInt( Math.floor((timeUntil % 60000)) / 1000 );
+        self.countdown = obj
+
+        self.ractive.set('displayCountdown', self.displayCountdown)
+        self.ractive.set('countdown', self.countdown)
+
+    }
 
 	ractivate() {
 
@@ -104,9 +133,15 @@ export class Birds {
 
                 isIosApp: self.settings.isIosApp,
 
+                displayCountdown: self.displayCountdown,
+
                 votecount : self.settings.votecount,
 
                 updated: moment().format("hh:mm A"),
+
+                countdown: self.countdown,
+
+                final: self.settings.final,
 
 				singularity: function(num) {
 
@@ -159,17 +194,29 @@ export class Birds {
 
             var ts = Math.floor( Math.round((new Date()).getTime()) / 1000 ) ;
 
-            if (ts > self.settings.closing) {
+            if (ts > self.settings.competition_closing_time) {
 
                 clearTimeout(self.interval);
 
-                self.settings.preflight = false
+                self.displayCountdown = false
 
-                self.ractive.set('eligible', self.settings.preflight)
+                self.ractive.set('displayCountdown', self.displayCountdown)
 
-                console.log("The competition is now closed")
+                if (!self.settings.final) {
+
+                    location.reload(true);
+
+                }
+
+                // self.settings.preflight = false
+
+                // self.ractive.set('eligible', self.settings.preflight)
+
+                // console.log("The competition is now closed")
 
             } else {
+
+                self.displayCountdown = true
 
                 if (self.settings.testing) {
 
@@ -177,10 +224,14 @@ export class Birds {
 
                 }
 
+                var ts = Math.round((new Date()).getTime());
+
+                self.displayTime(ts)
+
             }
 
 
-        }, 60000);
+        }, 1000);
 
 	}
 
@@ -289,7 +340,6 @@ export class Birds {
         var element = document.getElementById("timestamp");
 
         this.scrollTo(element)
-
 
     }
 

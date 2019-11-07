@@ -1,8 +1,17 @@
 <div class="grid-wrapper">
 
+    <p class='countdown_ticker'>{{#if displayCountdown}}{{#countdown}}<div id="timeEnd"><span id="untilHour">{{hours}}</span> hrs, <span id="untilMinute">{{mins}}</span> mins, <span id="untilSecond">{{secs}} seconds until <br/>the <strong>final ten</strong> voting round begins</span></div>{{/countdown}}{{/if}}</p>
+
     <div class="intro">
         
-        <p><span class="drop-cap"><span class="drop-cap__inner">V</span></span>ote for your favourite Australian bird of 2019 from our list of 50 birds – if your favourite is not included, you can nominate it below. At the end of the first round the ten birds with the most votes will automatically make it to to the final round of voting. The first round is open until 8 November 2019.</p>
+
+    {{#if final}}
+    <p class='countdown_ticker'>Vote for the Australian bird of 2019 from the final shortlist of 10 birds.</p>
+    {{else}}
+    <p><span class="drop-cap"><span class="drop-cap__inner">V</span></span>ote for your favourite Australian bird of 2019 from our list of 50 birds – if your favourite is not included, you can nominate it below. At the end of the first round the ten birds with the most votes will automatically make it to to the final round of voting. The first round is open until 8 November 2019.</p>
+    {{/if}}
+
+        
 
          {{#if !isIosApp}}    
 
@@ -56,11 +65,18 @@
 
     </div>
 
+    {{#if final}}
+    {{else}}
     <div class="nominate_bird_bar">Your pick not listed? <a on-click="['nominate']">nominate it here</a></div>
+    {{/if}}
 
     {{else}}
 
+    {{#if final}}
+    <div id="timestamp"><strong>Results last updated:</strong> {{updated}}</div>
+    {{else}}
     <div id="timestamp"><strong>You have voted</strong> in the first round of the bird poll. You can <strong>vote in the final round</strong> from <strong>November 8</strong> onwards.<br/>Twitchers: {{votecount}} | Results last updated: {{updated}}</div>
+    {{/if}}
 
     {{#each bird}}
 
